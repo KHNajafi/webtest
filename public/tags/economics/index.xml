@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Economics | Khalil H Najafi</title>
+    <link>/tags/economics/</link>
+      <atom:link href="/tags/economics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Economics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 25 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Economics</title>
+      <link>/tags/economics/</link>
+    </image>
+    
+    <item>
+      <title>Pigouvian Taxes</title>
+      <link>/feathers/pigouvian-taxes/</link>
+      <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/feathers/pigouvian-taxes/</guid>
+      <description>
+
+
+&lt;p&gt;Snippet of the menu for an (intentionally) anonymous sushi restaurant in Toronto, and all I can think is: &lt;strong&gt;A literal tax on happiness&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It reminds me of a course I took in &lt;em&gt;Economics of Public Finance&lt;/em&gt;, specifically on the subtopic of &lt;a href=&#34;https://en.wikipedia.org/wiki/Pigovian_tax&#34;&gt;Pigouvian taxes&lt;/a&gt; — essentially a tax placed on activities that create negative costs to others: an entrepreneur may wish to build a factory next to a residential area and a whole host of ‘costs’ may arise which the firm does not pay directly, such as unpleasant fumes causing perma-smelly-backyards for nearby residents (more generally, a negative externality). To discourage or lead to a more desirable (efficient) outcome, there may be taxes levied on the factory owners, perhaps to provide residents with a lifetime supply of &lt;em&gt;Febreze&lt;/em&gt;. I feel as if this restauranteur may view joy as a negative thing, so to offset the happiness of friends congregating to celebrate we all need to pay a $1 tax .. don’t turn that frown upside down, please.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

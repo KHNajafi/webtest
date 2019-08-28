@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ggplot2 | Khalil H Najafi</title>
+    <link>/tags/ggplot2/</link>
+      <atom:link href="/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
+    <description>ggplot2</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>ggplot2</title>
+      <link>/tags/ggplot2/</link>
+    </image>
+    
+    <item>
+      <title>Visualizing Homelessness in Toronto</title>
+      <link>/post/shelters-to/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/shelters-to/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/pymjs/pym.v1.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/widgetframe-binding/widgetframe.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;data-science-for-humanity&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data Science for Humanity&lt;/h2&gt;
+&lt;p&gt;During my undergrad in Waterloo I was exposed to the realities of homelessness in the city. Initially through daily life and mostly with adult men, which led me to volunteering a bit of time for a couple of events at a shelter. I quickly learnt about the deeper extent of homelessness, including the variety of groups that are affected and reliant on non-profit and city funded programs.&lt;/p&gt;
+&lt;p&gt;Many of us are largely ignorant of these services, as well as the depth of the problem itself. Based on your day-to-day, you may have a narrow perception of things, just as my initial view of homelessness mostly affecting adult males.&lt;/p&gt;
+&lt;p&gt;I’ve separately wanted to explore some of the datasets that the City provides through it’s (excellent) &lt;a href=&#34;https://open.toronto.ca&#34;&gt;Open Data program&lt;/a&gt;. You have probably interacted with this service (albeit unknowingly) as it powers a number of apps such as transit times, or the bike share network. Finding a dataset on shelter services and occupancy prompted me to develop &lt;a href=&#34;https://batman.shinyapps.io/toronto_shelter_occupancy/&#34;&gt;a simple app&lt;/a&gt; to shed some light on the issue.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Why an app on homelessness?&lt;/em&gt; – This is a bit of a silly question, but my intentions stem from an effort to apply some of my time and capabilities to something a bit more meaningful and substantive .. sort of as a response to the question I sometimes ask myself &lt;strong&gt;“what positive impact am I having on my community?”&lt;/strong&gt;. The main point here is that I feel the potential of modern data science can extend beyond (mostly) business and tech to the realms of ‘grander’ problems. The deeper problems we face in our current era; especially the ones affecting groups who are not typically beneficiaries of modern tools.&lt;/p&gt;
+&lt;p&gt;With that, let me lay out the details in a more organized fashion.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-app&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The App&lt;/h2&gt;
+&lt;div id=&#34;question&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Question&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Where are shelter programs offered in the city? Crucially, how does occupancy trend over time by group?&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;We can enrich the core dataset with location variables that will allow us to visualize the data layered onto a map, which provides a useful representation of “where”.&lt;/p&gt;
+&lt;p&gt;Further, we can focus on occupancy as a proportion of capacity, to make it easier to observe if existing programs meet demand or not (by group, of course); for example, is there sufficient capacity for families? How does occupancy for women’s programs vary relative to men’s?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;dataset&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Dataset&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Toronto Shelter Data Feed&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;As mentioned, &lt;a href=&#34;https://batman.shinyapps.io/toronto_shelter_occupancy/&#34;&gt;the app&lt;/a&gt; is powered by the shelters dataset through the city’s Open Data program, which updates daily the facility, program name, and capacity and occupancy. The occupancy is taken the following day at 4a, so for example today’s occupancy will be a tally of number in attendance at 4a tomorrow. I’ve used the facility and address information to populate the latitude/longitude data and merged it into the table. Finally, I use the time series to determine average monthly metrics displayed on the map, and then plot the daily occupancy for each shelter to highlight trends within each group.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;analysis&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Analysis&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;How is the app created and what does it provide?&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I’m utilizing &lt;code&gt;shiny&lt;/code&gt; for the app, and &lt;a href=&#34;http://rstudio.github.io/leaflet/&#34;&gt;Leaflet&lt;/a&gt; for the main visualization (via &lt;code&gt;leaflet&lt;/code&gt; for R) as well as &lt;code&gt;ggplot2&lt;/code&gt;. The app highlights location, as well as average monthly capacity using circles on the map (larger the circle, larger the average capacity of the shelter). It also provides a daily breakdown of occupancy per shelter for the month based on the date selected.&lt;/p&gt;
+&lt;div id=&#34;htmlwidget-1&#34; style=&#34;width:100%;height:480px;&#34; class=&#34;widgetframe html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-1&#34;&gt;{&#34;x&#34;:{&#34;url&#34;:&#34;/post/shelters-TO/index_files/figure-html//widgets/widget_shelter snippet.html&#34;,&#34;options&#34;:{&#34;xdomain&#34;:&#34;*&#34;,&#34;allowfullscreen&#34;:false,&#34;lazyload&#34;:false}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;p&gt;Visit the &lt;a href=&#34;https://batman.shinyapps.io/toronto_shelter_occupancy/&#34;&gt;shelters app here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Perimeter of Ignorance</title>
+      <link>/feathers/perimeter-of-ignorance/</link>
+      <pubDate>Sun, 18 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/feathers/perimeter-of-ignorance/</guid>
+      <description>
+
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“As the area of our knowledge increases, so too, does the perimeter of our ignorance”&lt;/em&gt; — Neil DeGrasse Tyson&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;One of the many quotables from one of the great science communicators. A key reason in selecting this quote is due to its graphical representation.&lt;/p&gt;
+&lt;p&gt;The visualization above shows how increasing &lt;em&gt;area&lt;/em&gt; (&lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt;) leads to an increase in &lt;em&gt;perimeter&lt;/em&gt; (&lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;) by virtue of the increase in radius (&lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;) which is the key component of both equations.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;NB&lt;/strong&gt;:&lt;/em&gt; Some who are particularly astute (or anal) might correctly highlight that paralleling &lt;em&gt;ignorance&lt;/em&gt; to “perimeter” is slightly incorrect: it’s the area of the surrounding space - exclusive of the circle - that represents ignorance, and this area certainly decreases as the circle gets bigger .. but nobody likes a keener&lt;/p&gt;
+&lt;p&gt;Here’s the R code to create the visualization above using &lt;code&gt;ggplot2&lt;/code&gt;, &lt;code&gt;ggforce&lt;/code&gt; (for an easy circle &lt;em&gt;geom&lt;/em&gt;), and &lt;code&gt;viridis&lt;/code&gt; for colour pallette:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;quot;ggplot2&amp;quot;)
+library(&amp;quot;ggforce&amp;quot;)
+library(&amp;quot;viridis&amp;quot;)
+
+#data.frame that provides all the requisite data for plotting
+circle &amp;lt;- data.frame(x = c(1, 7),
+                     y = rep(2, 2),
+                     r = c(3, 2),
+                     type = ordered(c(&amp;quot;More&amp;quot;, &amp;quot;Less&amp;quot;)))
+#adding `area` (A) and `circumference` (C)
+circle &amp;lt;- circle %&amp;gt;% 
+        mutate(A = round(pi * (circle$r)^2, 1),
+               C = round(2 * pi * (circle$r), 1))
+
+#the vis
+ggplot(data = circle) + 
+        # the plot
+        geom_circle(aes(x0 = x, y0 = y, r = r, fill = type), 
+                    colour = &amp;quot;slategrey&amp;quot;) + 
+        annotate(&amp;quot;text&amp;quot;, x = circle$x, y = circle$y + 0.25, 
+                 label = paste0(&amp;quot;A ≈ &amp;quot;, circle$A, &amp;quot;u²&amp;quot;),
+                 hjust = 0, 
+                 colour = &amp;quot;slategrey&amp;quot;) +
+        annotate(&amp;quot;text&amp;quot;, x = circle$x, y = circle$y + circle$r + 0.25, 
+                 label = paste0(&amp;quot;C ≈ &amp;quot;, circle$C, &amp;quot;u&amp;quot;),
+                 colour = &amp;quot;slategrey&amp;quot;) +
+        annotate(&amp;quot;text&amp;quot;, x = -1.8, y = -1.25, 
+                 label = &amp;quot;Area==pi*r^2~~and~~Circumference==2*pi*r&amp;quot;, 
+                 parse = T,
+                 hjust = 0, 
+                 colour = &amp;quot;slategrey&amp;quot;) +
+        # a colour pallette from viridis
+        scale_fill_viridis(discrete = T, option = &amp;quot;C&amp;quot;) +
+        coord_fixed() +
+        # vis labels
+        labs(x = &amp;quot;&amp;quot;, y = &amp;quot;&amp;quot;, fill = &amp;quot;Knowledge&amp;quot;) +
+        theme_bw() + 
+        theme(legend.position = &amp;quot;bottom&amp;quot;,
+              axis.text = element_blank(),
+              axis.ticks = element_blank(),
+              panel.grid = element_blank(),
+              plot.background = element_blank(),
+              panel.border = element_blank())&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

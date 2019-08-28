@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quotes | Khalil H Najafi</title>
+    <link>/tags/quotes/</link>
+      <atom:link href="/tags/quotes/index.xml" rel="self" type="application/rss+xml" />
+    <description>Quotes</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 25 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Quotes</title>
+      <link>/tags/quotes/</link>
+    </image>
+    
+    <item>
+      <title>Learning v. Knowing</title>
+      <link>/feathers/new-v-known/</link>
+      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>/feathers/new-v-known/</guid>
+      <description>
+
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“The rate at which things change is greater than our rate to learn”&lt;/em&gt; — Anon&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This was a wonderful tidbit I heard while attending a recent conference, unfortunately I cannot recall who said it! Nonetheless, on the quote itself:&lt;/p&gt;
+&lt;p&gt;Aside from the obvious, I find it tells us something a bit more implicit, and arguably more profound: Obtaining newly created knowledge is good and well, but &lt;em&gt;how well do you really understand something?&lt;/em&gt; Are there topics you have a mastery of? An awareness of new ideas, models, etc is most useful if it can further one’s understanding or capabilities &lt;em&gt;in their core domains&lt;/em&gt;. Jack-of-all-trades etc etc, as the other saying goes..&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Perimeter of Ignorance</title>
+      <link>/feathers/perimeter-of-ignorance/</link>
+      <pubDate>Sun, 18 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/feathers/perimeter-of-ignorance/</guid>
+      <description>
+
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“As the area of our knowledge increases, so too, does the perimeter of our ignorance”&lt;/em&gt; — Neil DeGrasse Tyson&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;One of the many quotables from one of the great science communicators. A key reason in selecting this quote is due to its graphical representation.&lt;/p&gt;
+&lt;p&gt;The visualization above shows how increasing &lt;em&gt;area&lt;/em&gt; (&lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt;) leads to an increase in &lt;em&gt;perimeter&lt;/em&gt; (&lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;) by virtue of the increase in radius (&lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;) which is the key component of both equations.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;NB&lt;/strong&gt;:&lt;/em&gt; Some who are particularly astute (or anal) might correctly highlight that paralleling &lt;em&gt;ignorance&lt;/em&gt; to “perimeter” is slightly incorrect: it’s the area of the surrounding space - exclusive of the circle - that represents ignorance, and this area certainly decreases as the circle gets bigger .. but nobody likes a keener&lt;/p&gt;
+&lt;p&gt;Here’s the R code to create the visualization above using &lt;code&gt;ggplot2&lt;/code&gt;, &lt;code&gt;ggforce&lt;/code&gt; (for an easy circle &lt;em&gt;geom&lt;/em&gt;), and &lt;code&gt;viridis&lt;/code&gt; for colour pallette:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;quot;ggplot2&amp;quot;)
+library(&amp;quot;ggforce&amp;quot;)
+library(&amp;quot;viridis&amp;quot;)
+
+#data.frame that provides all the requisite data for plotting
+circle &amp;lt;- data.frame(x = c(1, 7),
+                     y = rep(2, 2),
+                     r = c(3, 2),
+                     type = ordered(c(&amp;quot;More&amp;quot;, &amp;quot;Less&amp;quot;)))
+#adding `area` (A) and `circumference` (C)
+circle &amp;lt;- circle %&amp;gt;% 
+        mutate(A = round(pi * (circle$r)^2, 1),
+               C = round(2 * pi * (circle$r), 1))
+
+#the vis
+ggplot(data = circle) + 
+        # the plot
+        geom_circle(aes(x0 = x, y0 = y, r = r, fill = type), 
+                    colour = &amp;quot;slategrey&amp;quot;) + 
+        annotate(&amp;quot;text&amp;quot;, x = circle$x, y = circle$y + 0.25, 
+                 label = paste0(&amp;quot;A ≈ &amp;quot;, circle$A, &amp;quot;u²&amp;quot;),
+                 hjust = 0, 
+                 colour = &amp;quot;slategrey&amp;quot;) +
+        annotate(&amp;quot;text&amp;quot;, x = circle$x, y = circle$y + circle$r + 0.25, 
+                 label = paste0(&amp;quot;C ≈ &amp;quot;, circle$C, &amp;quot;u&amp;quot;),
+                 colour = &amp;quot;slategrey&amp;quot;) +
+        annotate(&amp;quot;text&amp;quot;, x = -1.8, y = -1.25, 
+                 label = &amp;quot;Area==pi*r^2~~and~~Circumference==2*pi*r&amp;quot;, 
+                 parse = T,
+                 hjust = 0, 
+                 colour = &amp;quot;slategrey&amp;quot;) +
+        # a colour pallette from viridis
+        scale_fill_viridis(discrete = T, option = &amp;quot;C&amp;quot;) +
+        coord_fixed() +
+        # vis labels
+        labs(x = &amp;quot;&amp;quot;, y = &amp;quot;&amp;quot;, fill = &amp;quot;Knowledge&amp;quot;) +
+        theme_bw() + 
+        theme(legend.position = &amp;quot;bottom&amp;quot;,
+              axis.text = element_blank(),
+              axis.ticks = element_blank(),
+              panel.grid = element_blank(),
+              plot.background = element_blank(),
+              panel.border = element_blank())&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

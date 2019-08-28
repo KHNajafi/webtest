@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Khalil H Najafi</title>
+    <link>/authors/</link>
+      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>/authors/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;p&gt;Khalil H Najafi is formally a data scientist, from the domains of econometrics and applied statistics.  His approach is very much grounded in the scientific method, focusing on generating and prioritizing the right questions $ [problem^{forward} &amp;gt; solution_{backward}] $ then analyzing all relevant data (including qualitative factors) to evaluate hypotheses, and most importantly, begin the process of creating knowledge.&lt;/p&gt;
+
+&lt;p&gt;Outside of speaking in the 3&lt;sup&gt;rd&lt;/sup&gt; person, I am a huge fan of Batman, hats, football (as in &lt;em&gt;football&lt;/em&gt; football; go City), and most of all, my wife &amp;amp; two bambinos :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/authors/me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/authors/me/</guid>
+      <description>&lt;p&gt;Khalil H Najafi is formally a data scientist, from the domains of econometrics and applied statistics.  His approach is very much grounded in the scientific method, focusing on generating and prioritizing the right questions $ [problem^{forward} &amp;gt; solution_{backward}] $ then analyzing all relevant data (including qualitative factors) to evaluate hypotheses, and most importantly, begin the process of creating knowledge.&lt;/p&gt;
+
+&lt;p&gt;Outside of speaking in the 3&lt;sup&gt;rd&lt;/sup&gt; person, I am a huge fan of Batman, hats, football (as in &lt;em&gt;football&lt;/em&gt; football; go City), and most of all, my wife &amp;amp; two bambinos :)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
